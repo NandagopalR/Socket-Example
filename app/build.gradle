@@ -1,0 +1,122 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+repositories {
+    google()
+    maven { url 'https://maven.google.com' }
+    mavenCentral()
+}
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSDKVersion
+        targetSdkVersion rootProject.ext.targetSDKVersion
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError true
+        // if true, only report errors
+        ignoreWarnings false
+        disable 'MissingTranslation'
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    testImplementation rootProject.ext.junit
+
+    /*Support - App Compat*/
+    implementation(rootProject.ext.supportAppCompat) {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+
+    /*Support - Material Design*/
+    implementation(rootProject.ext.supportDesign) {
+        exclude group: 'com.android.support'
+    }
+
+    /*Support - RecyclerView*/
+    implementation(rootProject.ext.recyclerviewV7) {
+        exclude group: 'com.android.support'
+    }
+
+    implementation('com.github.nkzawa:socket.io-client:0.6.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    /*Butter Knife*/
+    implementation rootProject.ext.butterKinfe
+    annotationProcessor rootProject.ext.butterKinfeProcessor
+
+    /*RxJava*/
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxJavaProguard
+
+    /*OkHttp*/
+    implementation rootProject.ext.okhttp
+    implementation rootProject.ext.okhttpInterceptor
+
+    /*Retrofit*/
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.retrofitGson
+    implementation rootProject.ext.retrofitAdapterRxJava
+
+    /*Glide*/
+    implementation rootProject.ext.glide
+    implementation rootProject.ext.glideOkHttp
+
+    /*Google Map*/
+    implementation rootProject.ext.map
+    implementation rootProject.ext.places
+    implementation rootProject.ext.location
+
+    /*Gson*/
+    implementation rootProject.ext.gson
+
+    /*Date 4J*/
+    implementation rootProject.ext.date4j
+
+    /*Otto - Event Bus*/
+    implementation rootProject.ext.otto
+}

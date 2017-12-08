@@ -1,0 +1,98 @@
+ext {
+    /*Sdk Version*/
+    minSDKVersion = 16
+    targetSDKVersion = 26
+    compileSdkVersion = 26
+    buildToolsVersion = "26.0.2"
+
+    /*Application ID*/
+    applicationId = "com.nanda.socketexample"
+
+    /*Test Compile Version*/
+    junitVersion = "4.12"
+
+    /*Apk Name*/
+    apkName = "Socket Example"
+
+    /*Support Version*/
+    supportVersion = "26.1.0"
+
+    /*Map Version*/
+    mapVersion = "11.6.0"
+
+    /*App Version Code & Name*/
+    appVersionCode = 1
+    appVersionName = "1.0"
+
+    /*OkHttp Version*/
+    okhttpVersion = "3.9.0"
+
+    /*Retrofit Version*/
+    retrofitVersion = "2.3.0"
+
+    /*RxJava Versions*/
+    rxAndroidVersion = "1.2.1"
+    rxJavaVersion = "1.2.5"
+    rxJavaProguardVersion = "1.2.5.0"
+
+    /*ButterKinfe Version*/
+    butterKnifeVersion = "8.4.0"
+
+    /*ButterKinfe Version*/
+    date4jVersion = "1.5.1"
+
+    /*Glide Version*/
+    glideVersion = "3.7.0"
+
+    /*Gson Versoin*/
+    gsonVersion = "2.8.2"
+
+    /*Event-Bus Version*/
+    eventBusVersion = "1.3.8"
+
+    /*Test - JUnit*/
+    junit = "junit:junit:$junitVersion"
+
+    /*Support*/
+    supportDesign = "com.android.support:design:$supportVersion"
+    supportAnnotations = "com.android.support:support-annotations:$supportVersion"
+    supportAppCompat = "com.android.support:appcompat-v7:$supportVersion"
+    recyclerviewV7 = "com.android.support:recyclerview-v7:$supportVersion"
+
+    /*ButterKnife*/
+    butterKinfe = "com.jakewharton:butterknife:${butterKnifeVersion}"
+    butterKinfeProcessor = "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
+
+    /*RxJava*/
+    rxAndroid = "io.reactivex:rxandroid:${rxAndroidVersion}"
+    rxJava = "io.reactivex:rxjava:${rxJavaVersion}"
+    rxJavaProguard = "com.artemzin.rxjava:proguard-rules:${rxJavaProguardVersion}"
+
+    /*OkHttp*/
+    okhttp = "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+    okhttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}"
+
+    /*Retrofit*/
+    retrofitAdapterRxJava = "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}"
+    retrofitGson = "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    retrofit = "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+
+    /*Glide*/
+    glide = "com.github.bumptech.glide:glide:${glideVersion}"
+    glideOkHttp = 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+
+    /*Gson*/
+    gson = "com.google.code.gson:gson:${gsonVersion}"
+
+    /*Google Map*/
+    map = "com.google.android.gms:play-services-maps:${mapVersion}"
+    places = "com.google.android.gms:play-services-places:${mapVersion}"
+    location = "com.google.android.gms:play-services-location:${mapVersion}"
+
+    /*Date 4J*/
+    date4j = "com.darwinsys:hirondelle-date4j:${date4jVersion}"
+
+    /*Otto*/
+    otto = "com.squareup:otto:${eventBusVersion}"
+
+}
